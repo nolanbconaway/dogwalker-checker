@@ -39,7 +39,7 @@ def index():
         SELECT tm, walker, note
         FROM walks
         WHERE dt = CURDATE()
-        -- WHERE dt = '2018-08-16'
+        ORDER BY dttm DESC
         LIMIT 1
     ''')
     today = None if not today else today[0]
