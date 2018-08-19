@@ -1,3 +1,3 @@
-FLASK_APP=hlc
+FLASK_APP=dwc
 FLASK_ENV=development
 FLASK_RUN_PORT=5000

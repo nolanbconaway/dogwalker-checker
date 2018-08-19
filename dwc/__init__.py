@@ -56,11 +56,9 @@ def index():
     ''')
     today = None if not today else today[0]
 
-    print()
     return render_template(
         'hist.html',
         x=[delta2time(i['tm']).strftime('%H:%M') for i in rows],
         y=[i['n'] for i in rows],
         today=today,
-
     )

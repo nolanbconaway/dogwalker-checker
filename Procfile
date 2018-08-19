@@ -1,1 +1,1 @@
-web: gunicorn hlc:app
+web: gunicorn dwc:app
