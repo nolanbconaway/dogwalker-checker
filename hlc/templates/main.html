@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src='{{url_for("static", filename="Chart.min.js")}}'></script>
+ <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="style.css")}}" />
+</head>
+<body>
+
+<center><h1>Leashtime Report</h1></center>
+
+<div id='today'>
+    <h2>Today's Walk</h2>
+    {% if today %}
+        <p>Patches went on his walk already!</p>
+        <ul>
+        {% for key, value in today.items() %}
+            <li>{{value}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No walk so far ...</p>
+    {% endif %}
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    min-width: 400px;
+    max-width: 900px;
+}
+
+div#today {
+    padding-left: 20px;
+    margin-left: 20px;
+}
