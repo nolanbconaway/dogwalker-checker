@@ -1,6 +1,9 @@
 from flask import Flask
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
 
 import os
 
@@ -11,6 +14,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URI']
 db = SQLAlchemy(app)
 
+# set up limiter
+limiter = Limiter(
+    app,
+    key_func=get_remote_address,
+    default_limits=["200 per day", "50 per hour"]
+)
+
 
 def sql(query):
     """Run a query, return the results."""
@@ -20,6 +30,7 @@ def sql(query):
 
 
 @app.route("/")
+@limiter.limit("10/minute")
 def index():
 
     rows = sql('''

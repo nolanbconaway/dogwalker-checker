@@ -1,3 +1,3 @@
 FLASK_APP=hlc
-FLASK_ENV=production
+FLASK_ENV=development
 FLASK_RUN_PORT=5000
