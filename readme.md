@@ -2,7 +2,7 @@
 
 Every weekday a very nice person comes by my apartment to take my dog, Patches, out for a walk. Here's a picture of Patches catching some rays ~~
 
-![](patches.png)
+![A Very Good Boy](patches.jpeg)
 
 He's a Good Boy.
 
