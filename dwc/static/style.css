@@ -1,10 +1,13 @@
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    min-width: 400px;
+    min-width: 320px;
     max-width: 900px;
 }
 
-div#today {
-    padding-left: 20px;
-    margin-left: 20px;
+h1, h2, h3, h4 {
+    text-align: center
+}
+
+div.info {
+    text-align: center
 }

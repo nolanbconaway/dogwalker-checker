@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="initial-scale=1">
     <script src='{{url_for("static", filename="Chart.min.js")}}'></script>
     <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="style.css")}}" />
 </head>
@@ -9,7 +9,7 @@
 
 <center><h1>Dog Walker Report</h1></center>
 
-<div id='today'>
+<div class='info' id='today'>
     <h2>Today's Walk</h2>
     {% if today %}
         <p>Patches went on his walk already!</p>
