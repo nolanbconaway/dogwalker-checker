@@ -30,14 +30,10 @@ def sql(query):
 
 
 @app.route("/")
-@limiter.limit("10/minute")
+@limiter.limit("1 per 7 second")
 def index():
 
-    rows = sql('''
-        SELECT t.tm, COUNT(w.id) AS n
-        FROM `times` t LEFT JOIN `walks` w ON w.tm=t.tm
-        GROUP BY t.tm ORDER BY 1
-    ''')
+    rows = sql('''SELECT * from histogram''')
 
     today = sql('''
         SELECT tm, walker, note
