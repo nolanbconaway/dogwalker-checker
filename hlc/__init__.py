@@ -4,9 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
-
+import datetime
 import os
-
 app = Flask(__name__)
 
 # set up database
@@ -29,8 +28,21 @@ def sql(query):
     return [dict(zip(cols, i)) for i in result.fetchall()]
 
 
+@app.context_processor
+def inject_data():
+    """Inject some helpful data into the template."""
+    return dict(
+        weekday=datetime.date.today().weekday()
+    )
+
+
+def delta2time(delta):
+    """Convert a timedelta to a time object."""
+    return (datetime.datetime.min + delta).time()
+
+
 @app.route("/")
-@limiter.limit("1 per 7 second")
+@limiter.limit("8 per minute")
 def index():
 
     rows = sql('''SELECT * from histogram''')
@@ -44,9 +56,11 @@ def index():
     ''')
     today = None if not today else today[0]
 
+    print()
     return render_template(
         'hist.html',
-        x=[str(i['tm']) for i in rows],
+        x=[delta2time(i['tm']).strftime('%H:%M') for i in rows],
         y=[i['n'] for i in rows],
-        today=today
+        today=today,
+
     )

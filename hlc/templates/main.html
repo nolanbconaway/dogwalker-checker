@@ -18,7 +18,11 @@
         {% endfor %}
         </ul>
     {% else %}
-        <p>No walk so far ...</p>
+        {% if weekday > 4 %}
+            <p>It's the weekend! probably no walk today.</p>
+        {% else %}
+            <p>No walk so far ...</p>
+        {% endif %}
     {% endif %}
 </div>
 
