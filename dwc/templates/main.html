@@ -13,11 +13,9 @@
     <h2>Today's Walk</h2>
     {% if today %}
         <p>Patches went on his walk already!</p>
-        <ul>
         {% for key, value in today.items() %}
-            <li>{{value}}</li>
+            <p>- {{value}}</>
         {% endfor %}
-        </ul>
     {% else %}
         {% if weekday > 4 %}
             <p>It's the weekend! probably no walk today.</p>
