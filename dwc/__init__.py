@@ -50,7 +50,7 @@ def index():
     today = sql('''
         SELECT tm, walker, note
         FROM walks
-        WHERE dt = CURDATE()
+        WHERE dt = DATE(DATE_SUB(NOW(), INTERVAL 4 HOUR)) # utc to eastern
         ORDER BY dttm DESC
         LIMIT 1
     ''')
