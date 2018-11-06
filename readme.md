@@ -15,3 +15,4 @@ This is an app that lets me check the state of the day's walk and see the distri
 1. cache mainpage sql query (not needed for each request as it only updates 1x a day).
 2. Compute most likely distribution and overlay.
 3. Break down distributions from each walker.
+4. Database schema endpoint
