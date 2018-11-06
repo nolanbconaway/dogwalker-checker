@@ -44,7 +44,7 @@ def delta2time(delta):
 @app.route("/")
 @limiter.limit("8 per minute")
 def index():
-
+    """Return the index page."""
     rows = sql('''SELECT * from histogram''')
 
     today = sql('''
