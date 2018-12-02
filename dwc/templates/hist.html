@@ -27,7 +27,7 @@
         legend: {display: false},
         scales: {
             yAxes: [{
-              ticks: {min: 0, max: 20},
+              ticks: {min: 0, max: {{axis_ceiling(y | sort | last)}} },
             }],
             xAxes: [{
                 gridLines: {display: false},

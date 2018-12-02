@@ -21,6 +21,12 @@ limiter = Limiter(
 )
 
 
+def axis_ceiling(x, base=5):
+    """Get y axis upper limit given a maximum value."""
+    from math import ceil
+    return int(base * ceil(float(x + 1)/base))
+
+
 def sql(query):
     """Run a query, return the results."""
     result = db.engine.execute(query)
@@ -32,7 +38,8 @@ def sql(query):
 def inject_data():
     """Inject some helpful data into the template."""
     return dict(
-        weekday=datetime.date.today().weekday()
+        weekday=datetime.date.today().weekday(),
+        axis_ceiling=axis_ceiling
     )
 
 
