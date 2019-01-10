@@ -11,3 +11,9 @@ h1, h2, h3, h4 {
 div.info {
     text-align: center
 }
+
+div.notice {
+  background-color: #ff7c7c;
+  color: white;
+  padding: 10px;
+}
