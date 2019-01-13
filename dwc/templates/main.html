@@ -8,26 +8,23 @@
 <body>
 
 <div class='notice'>
-  Hey! Quick update. We changed walking services and I haven't updated the
-  web scraper yet. So this is out of date as of Jan 9 2018.
+  <p>
+  Hey! Quick update. We changed walking services and the new service shows
+  timestamped walks through their online portal. I am no longer running the
+  scraper and the data is not up to date.
+  </p>
+
+  <p>
+    In case you're interested, you can look at the data I collected in
+    <a href={{url_for("static", filename="walks.csv")}}>this CSV file</a>.
+  </p>
 </div>
 
 <center><h1>Dog Walker Report</h1></center>
 
 <div class='info' id='today'>
     <h2>Today's Walk</h2>
-    {% if today %}
-        <p>Patches went on his walk already!</p>
-        {% for key, value in today.items() %}
-            <p>- {{value}}</p>
-        {% endfor %}
-    {% else %}
-        {% if weekday > 4 %}
-            <p>It's the weekend! probably no walk today.</p>
-        {% else %}
-            <p>No walk so far ...</p>
-        {% endif %}
-    {% endif %}
+    <p><i>Data no longer being collected.</i></p>
 </div>
 
 {% block content %}
